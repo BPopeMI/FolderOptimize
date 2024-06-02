@@ -19,7 +19,8 @@ class FolderOrganizer:
                         moved = True
                         break
                 if not moved:
-                    print(f"No category found for: {file.name}")
+                    self._move_file(file, self.dest_folders['misc'])
+                    print(f"Moved to Misc: {file.name}")
 
     def _move_file(self, file_path, dest_folder):
         dest_folder.mkdir(parents=True, exist_ok=True)
@@ -38,7 +39,8 @@ paths = {
     'photos': '~/Pictures',
     'documents_compressed': '~/Documents/Compressed',
     'documents_text': '~/Documents/Text',
-    'music': '~/Music'
+    'music': '~/Music',
+    'misc': '~/Documents/Misc'
 }
 # Downloads folder - Clean up starting destination
 downloads_folder = '~/Downloads'
